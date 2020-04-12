@@ -2,7 +2,7 @@ import React from "react";
 import { RootState } from "../../app/rootReducer";
 import { useSelector, useDispatch } from "react-redux";
 import TodoListItem from "./TodoListItem";
-import { toggle } from "./todoSlice";
+import { toggleTodo } from "./todoSlice";
 import { VisibilityFilter } from "../visibilityFilter/visibilityFilterSlice";
 import { Todo } from "./types";
 
@@ -32,7 +32,7 @@ const TodoList = (props: Props) => {
         <TodoListItem
           key={todo.id}
           {...todo}
-          onClick={() => dispatch(toggle(todo))}
+          onClick={() => dispatch(toggleTodo(todo))}
         />
       ))}
     </ul>

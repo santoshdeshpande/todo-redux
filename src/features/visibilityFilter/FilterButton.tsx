@@ -2,8 +2,6 @@ import React from "react";
 import { VisibilityFilter, setVisibilityFilter } from "./visibilityFilterSlice";
 import { useDispatch } from "react-redux";
 
-import { Radio } from "antd";
-
 interface FilterButtonProps {
   visibilityFilter: VisibilityFilter;
   text: string;
@@ -16,12 +14,13 @@ const FilterButton = ({
   const dispatch = useDispatch();
 
   return (
-    <Radio.Button
+    <button
+      className="px-4 py-2 bg-blue-500 mr-2 text-white rounded hover:bg-blue-700 font-bold"
       value={visibilityFilter}
       onClick={() => dispatch(setVisibilityFilter(visibilityFilter))}
     >
       {text}
-    </Radio.Button>
+    </button>
   );
 };
 
