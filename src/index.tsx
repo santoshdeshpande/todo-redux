@@ -5,6 +5,7 @@ import "./index.css";
 import store from "./app/store";
 import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
+import "antd/dist/antd.css";
 
 function render() {
   const App = require("./App").default;

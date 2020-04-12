@@ -1,7 +1,8 @@
 import React from "react";
 import { VisibilityFilter, setVisibilityFilter } from "./visibilityFilterSlice";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../app/rootReducer";
+import { useDispatch } from "react-redux";
+
+import { Radio } from "antd";
 
 interface FilterButtonProps {
   visibilityFilter: VisibilityFilter;
@@ -13,17 +14,14 @@ const FilterButton = ({
   text,
 }: FilterButtonProps): JSX.Element => {
   const dispatch = useDispatch();
-  const currentVisibilityFilter = useSelector(
-    (state: RootState) => state.visibilityFilter
-  );
 
   return (
-    <button
-      disabled={currentVisibilityFilter === visibilityFilter}
+    <Radio.Button
+      value={visibilityFilter}
       onClick={() => dispatch(setVisibilityFilter(visibilityFilter))}
     >
       {text}
-    </button>
+    </Radio.Button>
   );
 };
 
